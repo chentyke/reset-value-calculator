@@ -1,0 +1,9 @@
+.wrangler/
+.sites-runtime/
+node_modules/
+dist/
+.openai/
+wrangler.jsonc
+.env
+.env.*
+!.env.example

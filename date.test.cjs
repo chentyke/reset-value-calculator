@@ -1,0 +1,10 @@
+const assert=require('node:assert/strict');
+const {resolveDate}=require('./src/resolve-date.js');
+const parts=d=>[d.getFullYear(),d.getMonth()+1,d.getDate(),d.getHours(),d.getMinutes()];
+assert.deepEqual(parts(resolveDate(1,8,15,new Date(2026,0,31))),[2026,2,1,8,15]);
+assert.deepEqual(parts(resolveDate(1,0,0,new Date(2026,11,31))),[2027,1,1,0,0]);
+assert.deepEqual(parts(resolveDate(31,23,59,new Date(2026,1,28))),[2026,3,31,23,59]);
+assert.deepEqual(parts(resolveDate(29,12,0,new Date(2028,1,28))),[2028,2,29,12,0]);
+assert.deepEqual(parts(resolveDate(22,10,30,new Date(2026,8,22,20))),[2026,9,22,10,30]);
+assert.throws(()=>resolveDate(0,0,0,new Date()));
+console.log('Calendar day inference: month/year rollover and leap dates passed.');

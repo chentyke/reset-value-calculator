@@ -1,0 +1,9 @@
+{
+  "name": "reset-value-calculator",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node engine.test.cjs && node date.test.cjs && node chart.test.cjs"
+  }
+}
