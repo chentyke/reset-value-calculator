@@ -15,6 +15,8 @@ python3 -m http.server 4173 --directory dist
 
 打开 `http://localhost:4173`。部署时将 `dist/` 作为静态网站目录；每次修改 `src/` 后重新执行 `npm run build`。
 
+推送到 GitHub 仓库的 `main` 分支后，Pages 工作流会先运行测试和构建，再发布 `dist/`。
+
 ## 估算方法
 
 设剩余周额度为 `r`（0 到 1），使用重置到原自然重置的间隔为 `h` 小时（0 到 168），套餐月价为 `p` 美元。网页显示的净值为：
